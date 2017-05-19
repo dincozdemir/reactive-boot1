@@ -28,7 +28,7 @@ public class MovieDataCLR implements CommandLineRunner {
         this.movieRepository
                 .deleteAll()
                 .subscribe(null, null, () ->
-                        Stream.of("Flux Gordon", "Enter the Mono<Void>", "Back to the Future", "AEon Flux")
+                        Stream.of("Flux Gordon", "Enter the Mono<Void>", "Back to the Future", "AEon Flux", "Kibar Feyzo")
                                 .map(title -> new Movie(title, UUID.randomUUID().toString()))
                                 .forEach(movie -> movieRepository.save(movie).subscribe(m -> log.info(m.toString()))));
     }
